@@ -33,8 +33,11 @@ function LanguageItem({language, index}) {
 
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!add ? <RxCaretUp className={style.icon} onClick={handleLanguage}/> : <RxCaretDown className={style.icon} onClick={handleLanguage}/>}</div>
-            <div><FaTrash onClick={deleteLanguage}/></div>
+            <div className='w-full'>
+                {!add ? <RxCaretUp className={style.icon} onClick={handleLanguage}/> : <RxCaretDown className={style.icon} onClick={handleLanguage}/>}
+                {!add && <div className={style.deleteIcon}><FaTrash onClick={deleteLanguage} /></div>}  
+            </div>
+            
             {!add &&
                 <div className={style.wrapper}>
                     <div className={style.inputWrapper}>

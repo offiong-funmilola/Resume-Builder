@@ -33,8 +33,11 @@ function SkillItem({skill, index}) {
     
     return (
             <div className={style.showContainer}>
-                <div className='w-full'>{!open ? <RxCaretUp className={style.icon} onClick={handleSkill}/> : <RxCaretDown className={style.icon} onClick={handleSkill}/>}</div>
-                <div><FaTrash onClick={deleteSkill}/></div>
+                <div className='w-full'>
+                    {!open ? <RxCaretUp className={style.icon} onClick={handleSkill}/> : <RxCaretDown className={style.icon} onClick={handleSkill}/>}
+                    {!open && <div className={style.deleteIcon}><FaTrash onClick={deleteSkill} /></div>}  
+                </div>
+                
                 {!open &&
                     <div className={style.wrapper}>
                         <div className={style.inputWrapper}>

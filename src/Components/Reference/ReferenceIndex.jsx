@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
+import {FaPlus} from 'react-icons/fa'
 import { style } from '../styles'
 import ReferenceItem from './ReferenceItem';
 
@@ -27,7 +28,10 @@ function ReferenceIndex() {
                     reference={reference}
                 />
             )}
-            <p className={style.link} onClick={addReference}>Add reference</p>  
+            <p className={style.link} onClick={addReference}>
+                <FaPlus className={style.plusIcon} />
+                <span className=''> Add reference</span>
+            </p>  
         </div>
     )
 }

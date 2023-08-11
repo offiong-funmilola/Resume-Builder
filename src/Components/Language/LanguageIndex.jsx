@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
+import { FaPlus } from 'react-icons/fa';
 import { style } from '../styles'
 import LanguageItem from './LanguaugeItem';
 
@@ -27,7 +28,10 @@ function LanguageIndex() {
                 language={language}
             />
         )}
-        <p className={style.link} onClick={addLanguage}>Add language</p>  
+        <p className={style.link} onClick={addLanguage}>
+            <FaPlus className={style.plusIcon} />
+            <span className=''> Add language</span>
+        </p>  
     </div>
   )
 }

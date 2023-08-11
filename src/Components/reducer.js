@@ -125,6 +125,7 @@ const reducer = (state, action) => {
                 activities: activitiesList
             };
         case reducerConstants.UPDATE_ACTIVITY:
+            console.log(action)
             let updateActivities = [...state.activities]
             updateActivities.splice(action.index, 1, {
                 ...updateActivities[action.index],
@@ -190,7 +191,6 @@ const reducer = (state, action) => {
             return {...state, hobbies: action.payload};
         default:
             return state;
-
     }
 }
 export default reducer

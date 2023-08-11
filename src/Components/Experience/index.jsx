@@ -1,6 +1,7 @@
 import React from 'react'
 import ExperienceItem from './ExperienceItem'
 import { useContext } from 'react'
+import { FaPlus } from 'react-icons/fa'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
 import { style } from '../styles'
@@ -26,7 +27,10 @@ function Experience() {
                     experience={experience}
                 />
             )}
-            <p className={style.link} onClick={addExperience}>Add experience</p>
+            <p className={style.link} onClick={addExperience}>
+                <FaPlus className={style.plusIcon} />
+                <span className=''> Add experience</span>
+            </p>
         </div>
     )
 }

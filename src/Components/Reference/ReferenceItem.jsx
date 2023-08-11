@@ -33,8 +33,11 @@ function References({reference, index}) {
 
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!point ? <RxCaretUp className={style.icon} onClick={handleReference}/> : <RxCaretDown className={style.icon} onClick={handleReference}/>}</div>
-            <div><FaTrash onClick={deleteReference}/></div>
+            <div className='w-full'>
+                {!point ? <RxCaretUp className={style.icon} onClick={handleReference}/> : <RxCaretDown className={style.icon} onClick={handleReference}/>}
+                {!point && <div className={style.deleteIcon}><FaTrash onClick={deleteReference} /></div>}  
+            </div>
+            
             {!point && 
                 <>
                     <div className={style.wrapper}>

@@ -3,9 +3,8 @@ import SocialItem from './SocialItem'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
+import { FaPlus } from 'react-icons/fa';
 import { style } from '../styles'
-
-
 
 function SocialIndex() {
     const {links, dispatch} = useContext(ResumeContext)
@@ -28,7 +27,10 @@ function SocialIndex() {
                 link={link}
             />
         )}
-        <p className={style.link} onClick={addSocial}>Add link</p>  
+        <p className={style.link} onClick={addSocial}>
+            <FaPlus className={style.plusIcon} />
+            <span className=''> Add link</span>
+        </p>  
     </div>
   )
 }

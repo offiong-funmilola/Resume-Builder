@@ -32,8 +32,10 @@ function Courses({course, index}) {
   
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!get ? <RxCaretUp className={style.icon} onClick={handleCourse}/> : <RxCaretDown className={style.icon} onClick={handleCourse}/>}</div>
-            <div><FaTrash onClick={deleteCourse}/></div>
+            <div className='w-full'>
+                {!get ? <RxCaretUp className={style.icon} onClick={handleCourse}/> : <RxCaretDown className={style.icon} onClick={handleCourse}/>}
+                {!get && <div className={style.deleteIcon}><FaTrash onClick={deleteCourse} /></div>}  
+            </div>
             {!get &&
             <>
                 <div className={style.wrapper}>

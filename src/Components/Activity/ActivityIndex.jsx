@@ -3,6 +3,7 @@ import ActivityItem from './ActivityItem'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
+import { FaPlus } from 'react-icons/fa';
 import { style } from '../styles'
 
 function ActivityIndex() {
@@ -11,7 +12,7 @@ function ActivityIndex() {
 
     const addActivity = () => {
         dispatch({
-            type:reducerConstants.ADD_ACTIVITY,
+            type: reducerConstants.ADD_ACTIVITY,
             payload: activityItem
         })
     }
@@ -22,7 +23,10 @@ function ActivityIndex() {
             {activities.map((activity, index) =>
                 <ActivityItem key={index} index={index} activity={activity}/>
             )}
-            <p className={style.link} onClick={addActivity}>Add activity</p>
+            <p className={style.link} onClick={addActivity}>
+                <FaPlus className={style.plusIcon} />
+                <span className=''> Add Activity</span>
+            </p>
         </div>
     )
 }

@@ -7,14 +7,6 @@ import SocialSummary from './SocialSummary'
 import {style} from '../styles'
 import {FaTrash} from 'react-icons/fa'
 
-// const style = {
-//     container: `w-full p-5 border border-gray-200 rounded-lg relative `,
-//     wrapper: `w-full flex justify-between`,
-//     inputWrapper: `w-1/2 font-sans text-lg mb-2`,
-//     label: `mb-1 block`,
-//     input: `w-5/6 p-3 bg-gray-100 focus:outline-none`,
-//     icon: `w-6 h-6 absolute right-2 top-1 z-10`,
-// }
 
 function Social({link, index}) {
     const [view, setView] = useState(false)
@@ -41,8 +33,12 @@ function Social({link, index}) {
   
   return (
     <div className={style.showContainer}>
-        <div className='w-full'>{!view ? <RxCaretUp className={style.icon} onClick={handleweb}/> : <RxCaretDown className={style.icon} onClick={handleweb}/>}</div>
-        <div><FaTrash onClick={deleteSocial} /></div>
+        <div className='w-full'>
+            {!view ? <RxCaretUp className={style.icon} onClick={handleweb}/> : <RxCaretDown className={style.icon} onClick={handleweb}/>}
+            {!view && <div className={style.deleteIcon}><FaTrash onClick={deleteSocial} /></div>}  
+        </div>
+        
+        
         {!view && 
             <div className={style.wrapper}>
                 <div className={style.inputWrapper}>

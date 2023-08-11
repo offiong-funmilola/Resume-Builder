@@ -37,8 +37,11 @@ function InternshipItem({internship, index}) {
     
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!intern ? <RxCaretUp className={style.icon} onClick={handleDropDown}/> : <RxCaretDown className={style.icon} onClick={handleDropDown}/>}</div>
-            <div><FaTrash onClick={deleteInternship} /></div>
+            <div className='w-full'>
+                {!intern ? <RxCaretUp className={style.icon} onClick={handleDropDown}/> : <RxCaretDown className={style.icon} onClick={handleDropDown}/>}
+                {!intern && <div className={style.deleteIcon}><FaTrash onClick={deleteInternship} /></div>}  
+            </div>
+            
             {!intern && 
                 <>
                     <div className={style.wrapper}>
@@ -56,7 +59,7 @@ function InternshipItem({internship, index}) {
                         <div className={style.inputWrapper}>
                             <label htmlFor='employer' className={style.label}>Employer</label>
                             <input 
-                                type='month' 
+                                type='text' 
                                 id='employer' 
                                 name='employer' 
                                 className={style.input} 

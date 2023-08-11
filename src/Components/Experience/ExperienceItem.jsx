@@ -15,6 +15,7 @@ function ExperienceItem({experience, index}) {
     const month = date.getMonth() + 1
     const year = date.getFullYear()
     const end = `${month}/${year}`
+    const addedStyle = !hide ? 'pt-10' : ''
 
     const handleDropDown = () => {
         setHide(!hide)
@@ -36,9 +37,11 @@ function ExperienceItem({experience, index}) {
     }
     
     return (
-        <div className={style.showContainer}>
-            <div className='w-full'>{!hide ? <RxCaretUp className={style.icon} onClick={handleDropDown}/> : <RxCaretDown className={style.icon} onClick={handleDropDown}/>}</div>
-            <div><FaTrash onClick={deleteExperience} /></div>
+        <div className={`${style.showContainer} ${addedStyle}`}>
+            <div className='w-full'>
+                {!hide ? <RxCaretUp className={style.icon} onClick={handleDropDown}/> : <RxCaretDown className={style.icon} onClick={handleDropDown}/>}
+                {!hide && <div className={style.deleteIcon}><FaTrash onClick={deleteExperience} /></div>}  
+            </div>
             {!hide && 
                 <>
                     <div className={style.wrapper}>

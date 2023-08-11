@@ -33,8 +33,11 @@ function Education({education, index}) {
    
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!display ? <RxCaretUp className={style.icon} onClick={handleEdu}/> : <RxCaretDown className={style.icon} onClick={handleEdu}/>}</div>
-            <div><FaTrash onClick={deleteEducation} /></div>
+            <div className='w-full'>
+                {!display ? <RxCaretUp className={style.icon} onClick={handleEdu}/> : <RxCaretDown className={style.icon} onClick={handleEdu}/>}
+                {!display && <div className={style.deleteIcon}><FaTrash onClick={deleteEducation} /></div>}  
+                </div>
+           
             {!display &&
             <>
                 <div className={style.wrapper}>

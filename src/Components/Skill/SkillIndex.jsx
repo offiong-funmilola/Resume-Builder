@@ -3,6 +3,7 @@ import SkillItem from './SkillItem'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
 import { reducerConstants } from '../reducerConstants'
+import { FaPlus } from 'react-icons/fa';
 import { style } from '../styles'
 
 
@@ -27,7 +28,10 @@ function SkillIndex() {
                 skill={skill}
             />
         )}
-        <p className={style.link} onClick={addSkill}>Add skill</p>  
+        <p className={style.link} onClick={addSkill}>
+            <FaPlus className={style.plusIcon} />
+            <span className=''> Add skill</span>
+        </p>  
     </div>
   )
 }

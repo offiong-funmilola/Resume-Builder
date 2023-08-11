@@ -2,6 +2,7 @@ import React from 'react'
 import InternshipItem from './InternshipItem'
 import { useContext } from 'react'
 import ResumeContext from '../../Context/ResumeContext';
+import { FaPlus } from 'react-icons/fa';
 import { reducerConstants } from '../reducerConstants'
 import { style } from '../styles'
 
@@ -26,7 +27,10 @@ function InternshipIndex() {
                     internship={internship}
                 />
             )}
-            <p className={style.link} onClick={addInternship}>Add internship</p>
+            <p className={style.link} onClick={addInternship}>
+                <FaPlus className={style.plusIcon} />
+                <span className=''> Add experience</span>
+            </p>
         </div>
     )
 }

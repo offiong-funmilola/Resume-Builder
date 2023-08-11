@@ -19,7 +19,7 @@ function ActivityItem({activity, index}) {
     const updateActivity = (e) => {
         dispatch({
             type: reducerConstants.UPDATE_ACTIVITY,
-            dispatch: {name: e.target.name, value: e.target.value},
+            payload: {name: e.target.name, value: e.target.value},
             index
         })
     }
@@ -33,8 +33,10 @@ function ActivityItem({activity, index}) {
 
     return (
         <div className={style.showContainer}>
-            <div className='w-full'>{!reveal ? <RxCaretUp className={style.icon} onClick={handleAcivity}/> : <RxCaretDown className={style.icon} onClick={handleAcivity}/>}</div>
-            <div><FaTrash onClick={deleteActivity}/></div>
+            <div className='w-full'>
+                {!reveal ? <RxCaretUp className={style.icon} onClick={handleAcivity}/> : <RxCaretDown className={style.icon} onClick={handleAcivity}/>}
+                {!reveal && <div className={style.deleteIcon}><FaTrash onClick={deleteActivity} /></div>}  
+                </div>
             {!reveal && 
                 <>
                     <div className={style.wrapper}>
