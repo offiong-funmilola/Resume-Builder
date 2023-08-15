@@ -23,8 +23,8 @@ function Content() {
         <div className={style.container}>
             <div className={style.main}>
                 <h3 className={style.heading}>Profile</h3>
-                {format(user.bio).map(item =>
-                    <p className={style.bio}>{item}</p> 
+                {format(user.bio).map((item, index) =>
+                    <p className={style.bio} key={index}>{item}</p> 
                 )}    
             </div>
             
@@ -35,8 +35,8 @@ function Content() {
                         <div className='w-full' key={index}>
                             <p className={style.para}>{experience.title ? `${experience.title},` : ''} {experience.employer ? `${experience.employer},` : ''} {experience.city} </p>
                             <p className={style.light}>{experience.start ? `${experience.start} -` : ''} {experience.end}</p>
-                            {format(experience.description).map(item => 
-                                <p className={style.description}>{item}</p>
+                            {format(experience.description).map((item, index) => 
+                                <p className={style.description} key={index}>{item}</p>
                             )}    
                         </div> 
                     ))}   
@@ -49,8 +49,8 @@ function Content() {
                         <div className='w-full' key={index}>
                             <p className={style.para}>{education.school ? `${education.school},` : ''} {education.degree ? `${education.degree},` : ''} {education.city} </p>
                             <p className={style.light}>{education.start ? `${education.start} -` : ''} {education.end}</p> 
-                            {format(education.description).map(item => 
-                                <p className={style.description}>{item}</p>
+                            {format(education.description).map((item, index) => 
+                                <p className={style.description} key={index}>{item}</p>
                             )} 
                         </div> 
                     ))}
@@ -77,8 +77,8 @@ function Content() {
                             <div className='w-full' key={index}>
                                 <p className={style.para}>{intership.title ? `${intership.title},` : ''} {intership.employer ? `${intership.employer},` : ''} {intership.city} </p>
                                 <p className={style.light}>{intership.start ? `${intership.start} -` : ''} {intership.end}</p>
-                                {format(internships.description).map(item => 
-                                    <p className={style.description}>{item}</p>
+                                {format(internships.description).map((item, index) => 
+                                    <p className={style.description} key={index}>{item}</p>
                                 )}       
                             </div> 
                         ))}   
@@ -106,8 +106,8 @@ function Content() {
                             <div className='w-full' key={index}>
                                 <p className={style.para}>{activity.title ? `${activity.title},` : ''} {activity.employer ? `${activity.employer},` : ''} {activity.city} </p>
                                 <p className={style.light}>{activity.start ? `${activity.start} -` : ''} {activity.end}</p> 
-                                {format(activity.description).map(item => 
-                                    <p className={style.description}>{item}</p>
+                                {format(activity.description).map((item, index) => 
+                                    <p className={style.description} key={index}>{item}</p>
                                 )}  
                             </div> 
                         ))}   

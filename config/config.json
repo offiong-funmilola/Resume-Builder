@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Password_01",
+    "database": "resume_builder",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "dB_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "resume_builder",
+    "password": null,
+    "database": "resume_builder",
+    "host": "127.0.0.1",
+    "port": 3600,
+    "dialectOptions": {
+      "ssl": true,
+      "sslmode": "process.env.DB_SSLMODE",
+      "sslrootcert": "process.env.DB_CERT_FILE"
+    },
+    "dialect": "process.env.DB_TYPE"
+  }
+}

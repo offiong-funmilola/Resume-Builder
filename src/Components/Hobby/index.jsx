@@ -15,7 +15,7 @@ function HobbyIndex() {
             <h3 className={style.heading}>Hobbies</h3>
             {hob && <HobbyItem/>}
             {!hob &&  
-                <p className={style.link} onClick={addHobby}>Click to add Hobby</p>
+                <p className={style.link} onClick={addHobby}>Click to add Hobbies</p>
             }
         </div>
     )
